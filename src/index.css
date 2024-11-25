@@ -2,3 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+button {
+  @apply inline-block bg-blue text-ivory py-2 px-6 rounded-lg font-bold border hover:bg-lightblue transition duration-300 hover:text-[#000];
+}
+
+p {
+  @apply text-gray-600;
+}
+
+h1 {
+  @apply text-3xl font-bold text-black mb-6
+}
+
+h2 {
+  @apply text-xl font-semibold text-black mb-4;
+}
+
+.link {
+  @apply p-2 m-3 text-ivory font-bold rounded-lg transition hover:text-black
+}

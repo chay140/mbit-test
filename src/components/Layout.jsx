@@ -3,9 +3,9 @@ import { Outlet } from 'react-router-dom';
 
 const Layout = () => {
   return (
-    <div>
+    <div className="h-full bg-ivory flex flex-col">
       <Header />
-      <main>
+      <main className="container mx-auto pt-10 main">
         <Outlet />
       </main>
     </div>

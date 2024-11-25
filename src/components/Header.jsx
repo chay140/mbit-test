@@ -1,15 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Menu from './Menu';
 
 const Header = () => {
   return (
     <header className="flex justify-between items-center bg-blue shadow-md">
-      <Link
-        to="/"
-        className="p-2 m-3 text-ivory font-bold text-2xl rounded-lg transition delay-1500 hover:text-lightblue"
-      >
-        Header
+      <Link to="/" className="link text-2xl">
+        =Home=
       </Link>
+      <Menu />
     </header>
   );
 };
