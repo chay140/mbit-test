@@ -1,16 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
-  return <div style={headerStyle}>헤더</div>;
-};
-
-const headerStyle = {
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  padding: '10px 20px',
-  backgroundColor: '#333',
-  color: '#fff',
+  return (
+    <header className="flex justify-between items-center bg-blue shadow-md">
+      <Link
+        to="/"
+        className="p-2 m-3 text-ivory font-bold text-2xl rounded-lg transition delay-1500 hover:text-lightblue"
+      >
+        Header
+      </Link>
+    </header>
+  );
 };
 
 export default Header;
