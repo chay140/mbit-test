@@ -6,7 +6,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    const fakeUser = { name: 'kangmin' };
+    const fakeUser = { name: 'potato1' };
     login(fakeUser);
     navigate('/profile');
   };
@@ -31,6 +31,7 @@ const Login = () => {
           <button
             type="submit"
             className="w-full"
+            onClick={handleLogin}
           >
             로그인
           </button>

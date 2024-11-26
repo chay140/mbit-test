@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
-const Menu = ({ isUser }) => {
+const Menu = () => {
   const navigate = useNavigate();
+  const { user } = useAuth();
 
   const handleLogout = () => {
     console.log("handleLogOut 마저 만들기")
@@ -10,7 +12,7 @@ const Menu = ({ isUser }) => {
 
   return (
     <div className="mr-5 space-x-4">
-      {isUser ? (
+      {user ? (
         <>
           <Link className="link" to="/profile">
             프로필
