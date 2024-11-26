@@ -7,8 +7,19 @@ export const register = async (userData) => {
   return response.data;
 };
 
-export const login = async (userData) => {};
+export const login = async (userData) => {
+  const response = await axios.post(`${API_URL}/login`, userData);
+  return response.data;
+};
 
 export const getUserProfile = async (token) => {};
 
-export const updateProfile = async (formData) => {};
+export const updateProfile = async (formData, token) => {
+  await axios.patch(`${API_URL}/profile`, formData, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+      Authorization: `Bearer ${token}`
+    }
+  });
+  return response.data;
+};

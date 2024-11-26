@@ -3,8 +3,7 @@
 @tailwind utilities;
 
 #root {
-  width: 100vw;
-  height: 100vh;
+  @apply w-screen h-screen bg-ivory;
 }
 
 button {
@@ -16,7 +15,7 @@ p {
 }
 
 h1 {
-  @apply text-3xl font-bold text-black mb-6
+  @apply text-3xl font-bold text-black mb-6;
 }
 
 h2 {
@@ -24,9 +23,13 @@ h2 {
 }
 
 input {
-  @apply w-full p-4 border border-gray-300 rounded-lg
+  @apply w-full p-4 border border-gray-300 rounded-lg;
 }
 
 .link {
-  @apply py-2 my-3 text-ivory font-bold rounded-lg transition hover:text-black
+  @apply py-2 my-3 text-ivory font-bold rounded-lg transition hover:text-black;
+}
+
+.radio-input {
+  @apply mr-2 text-blue w-auto;
 }

@@ -18,8 +18,8 @@ const TestPage = ({ user }) => {
   };
 
   return (
-    <div className="w-11/12 flex flex-col items-center justify-center bg-white shadow-lg rounded-lg p-8">
-      <div className="rounded-lg p-8 max-w-lg w-full h-full overflow-y-auto">
+    <div className="flex flex-col items-center justify-center bg-white shadow-lg rounded-lg p-8 mb-8">
+      <div className="rounded-lg p-8 overflow-y-auto">
         {!result ? (
           <>
             <h1>MBTI 테스트</h1>

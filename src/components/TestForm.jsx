@@ -36,7 +36,7 @@ const TestForm = ({ onSubmit }) => {
                   value={option}
                   checked={answers[index]?.answer === option}
                   onChange={() => handleChange(index, option)}
-                  className="mr-2 text-primary-color"
+                  className="radio-input"
                 />
                 {option}
               </label>
@@ -44,10 +44,7 @@ const TestForm = ({ onSubmit }) => {
           </div>
         </div>
       ))}
-      <button
-        type="submit"
-        className="w-full bg-primary-color text-white py-3 rounded-lg font-semibold hover:bg-primary-dark transition duration-300 hover:text-[#FF5A5F]"
-      >
+      <button type="submit" className="w-full">
         제출하기
       </button>
     </form>
