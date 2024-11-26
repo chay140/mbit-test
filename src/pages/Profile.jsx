@@ -10,7 +10,6 @@ const Profile = () => {
             </label>
             <input
               type="text"
-              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black-color focus:border-black-color"
             />
           </div>
           <button

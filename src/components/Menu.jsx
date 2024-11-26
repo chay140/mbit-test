@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-const Menu = ({ isUser = true }) => {
+const Menu = ({ isUser }) => {
   const navigate = useNavigate();
 
   const handleLogout = () => {

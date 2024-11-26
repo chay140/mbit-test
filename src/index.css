@@ -23,6 +23,10 @@ h2 {
   @apply text-xl font-semibold text-black mb-4;
 }
 
+input {
+  @apply w-full p-4 border border-gray-300 rounded-lg
+}
+
 .link {
   @apply p-2 m-3 text-ivory font-bold rounded-lg transition hover:text-black
 }
