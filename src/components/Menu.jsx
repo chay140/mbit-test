@@ -1,12 +1,15 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
-const Menu = ({user = true}) => {
+const Menu = () => {
+  const { user, setUser } = useAuth();
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    console.log("handleLogOut 마저 만들기")
-  }
+    setUser(null);
+    // 알림 필요할 듯
+  };
 
   return (
     <div className="space-x-4">
