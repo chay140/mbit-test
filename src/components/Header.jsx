@@ -4,8 +4,8 @@ import Menu from './Menu';
 
 const Header = () => {
   return (
-    <header className="flex justify-between items-center bg-blue shadow-md">
-      <Link to="/" className="link text-2xl ml-3">
+    <header className="flex justify-between items-center bg-blue shadow-md px-8">
+      <Link to="/" className="link text-2xl">
         =Home=
       </Link>
       <Menu />
