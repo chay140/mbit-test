@@ -1,15 +1,4 @@
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
-
 const Login = () => {
-  const { login } = useAuth();
-  const navigate = useNavigate();
-
-  const handleLogin = () => {
-    const fakeUser = { name: 'potato1' };
-    login(fakeUser);
-    navigate('/profile');
-  };
 
   return (
     <div className="w-full flex flex-col items-center justify-center">
@@ -31,7 +20,6 @@ const Login = () => {
           <button
             type="submit"
             className="w-full"
-            onClick={handleLogin}
           >
             로그인
           </button>
