@@ -9,7 +9,7 @@ const Menu = ({user = true}) => {
   }
 
   return (
-    <div className="mr-5 space-x-4">
+    <div className="space-x-4">
       {user ? (
         <>
           <Link className="link" to="/profile">

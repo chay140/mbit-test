@@ -5,7 +5,7 @@ const Signup = () => {
     <div className="w-full flex flex-col items-center justify-center">
       <div className="bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
         <h1>회원가입</h1>
-        <AuthForm type="signup" />
+        <AuthForm mode="signup" />
         <div className="mt-4">
           <p className="text-gray-600">
             이미 계정이 있으신가요?{' '}
