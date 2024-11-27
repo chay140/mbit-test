@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply bg-ivory;
+}
+
 #root {
-  @apply w-screen h-screen bg-ivory;
+  @apply w-screen h-screen;
 }
 
 button {

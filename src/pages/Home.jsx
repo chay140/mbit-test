@@ -4,7 +4,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full flex flex-col items-center justify-center bg-ivory">
+    <div className="w-[85%] flex flex-col items-center justify-center mx-auto">
       <h1 className="text-5xl font-bold text-black mb-6">
         무료 성격 테스트
       </h1>

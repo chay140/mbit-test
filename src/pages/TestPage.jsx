@@ -1,25 +1,28 @@
 import React, { useState } from 'react';
 import TestForm from '../components/TestForm';
 import { calculateMBTI, mbtiDescriptions } from '../utils/mbtiCalculator';
+import { useAuth } from '../context/AuthContext';
 import { createTestResult } from '../api/testResults';
 import { useNavigate } from 'react-router-dom';
 
-const TestPage = ({ user }) => {
+const TestPage = () => {
+  const { user } = useAuth();
   const navigate = useNavigate();
   const [result, setResult] = useState(null);
 
   const handleTestSubmit = async (answers) => {
     const mbtiResult = calculateMBTI(answers);
-    /* Test 결과는 mbtiResult 라는 변수에 저장이 됩니다. 이 데이터를 어떻게 API 를 이용해 처리 할 지 고민해주세요. */
+    setResult(mbtiResult);
+    // 백앤드로 보내는 로직 필요
   };
 
   const handleNavigateToResults = () => {
-    navigate('/results');
+    navigate('/testresult');
   };
 
   return (
-    <div className="flex flex-col items-center justify-center bg-white shadow-lg rounded-lg p-8 mb-8">
-      <div className="rounded-lg p-8 overflow-y-auto">
+    <div className="w-9/12 mx-auto flex flex-col items-center justify-center bg-white shadow-lg rounded-lg p-8 mb-8">
+      <div className="rounded-lg p-8 overflow-y-auto ">
         {!result ? (
           <>
             <h1>MBTI 테스트</h1>
