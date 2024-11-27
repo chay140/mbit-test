@@ -26,7 +26,7 @@ const TestPage = () => {
       const data = await createTestResult(resultData);
     } catch (error) {
       // TODO change UI
-      console.log('error =>', error);
+      console.log('여기인가? error =>', error);
     }
   };
 

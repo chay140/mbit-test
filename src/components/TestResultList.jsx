@@ -17,6 +17,7 @@ const TestResultList = () => {
   useEffect(() => {
     const fetchResults = async () => {
       try {
+        console.log("check1")
         const data = await getTestResults();
         setTestResults(data);
       } catch (error) {
