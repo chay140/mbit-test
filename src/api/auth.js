@@ -1,19 +1,21 @@
-import axios from 'axios';
-import api from './api';
+import axiosInstance from './axiosInstance';
 
 export const register = async (userData) => {
-  const response = await api.post(`/register`, userData);
+  const response = await axiosInstance.post(`/register`, userData);
   return response.data;
 };
 
 export const login = async (userData) => {
   const { id, password } = userData;
-  const response = await api.post(`/login?expiresIn=10h`, { id, password });
+  const response = await axiosInstance.post(`/login?expiresIn=10h`, {
+    id,
+    password,
+  });
   return response.data;
 };
 
 export const getUserProfile = async (accessToken) => {
-  const response = await api.get(`/user`, {
+  const response = await axiosInstance.get(`/user`, {
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${accessToken}`,
@@ -23,7 +25,7 @@ export const getUserProfile = async (accessToken) => {
 };
 
 export const updateProfile = async (formData, accessToken) => {
-  await api.patch(`/profile`, formData, {
+  await axiosInstance.patch(`/profile`, formData, {
     headers: {
       'Content-Type': 'multipart/form-data',
       Authorization: `Bearer ${accessToken}`,

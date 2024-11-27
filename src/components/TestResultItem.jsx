@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAuth } from '../context/AuthContext';
 import { mbtiDescriptions } from '../utils/mbtiCalculator';
-import { deleteTestResult, getTestResults, updateTestResultVisibility } from '../api/testResults';
+import { deleteTestResult, updateTestResultVisibility } from '../api/testResults';
 
 const TestResultItem = ({ item, handleUpdate }) => {
 	const { user: currentUser } = useAuth();

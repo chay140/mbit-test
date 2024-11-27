@@ -20,7 +20,7 @@ const TestResultList = () => {
         const data = await getTestResults();
         setTestResults(data);
       } catch (error) {
-        console.log('error =>', error);
+        // TODO
         alert(error);
       }
 		};
