@@ -3,12 +3,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 const Menu = () => {
-  const { user, setUser } = useAuth();
+  const { user, setUser, logout } = useAuth();
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    setUser(null);
-    // 알림 필요할 듯
+    logout();
+    // TODO
   };
 
   return (

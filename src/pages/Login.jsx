@@ -4,14 +4,15 @@ import { login } from '../api/auth';
 import {useAuth} from '../context/AuthContext'
 
 const Login = () => {
-  const { setUser } = useAuth();
+  const { login : localLogin } = useAuth();
   const navigate = useNavigate();
 
   const handleLogin = async (formData) => {
     try {
       const data = await login(formData);
       if (data.success) {
-        setUser(data);
+        const { userId, nickname, avatar } = data;
+        localLogin({userId, nickname, avatar}, data.accessToken);
         navigate('/');
       }
     } catch (error) {
