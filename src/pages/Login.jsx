@@ -1,10 +1,11 @@
 import { Link, useNavigate } from 'react-router-dom';
 import AuthForm from '../components/AuthForm';
 import { login } from '../api/auth';
-import {useAuth} from '../context/AuthContext'
+import { useAuth } from '../context/AuthContext';
+import { toast } from 'react-toastify';
 
 const Login = () => {
-  const { login : localLogin } = useAuth();
+  const { login: localLogin } = useAuth();
   const navigate = useNavigate();
 
   const handleLogin = async (formData) => {
@@ -12,12 +13,12 @@ const Login = () => {
       const data = await login(formData);
       if (data.success) {
         const { userId, nickname, avatar } = data;
-        localLogin({userId, nickname, avatar}, data.accessToken);
+        localLogin({ userId, nickname, avatar }, data.accessToken);
+        toast.success("로그인에 성공하였습니다");
         navigate('/');
       }
     } catch (error) {
-      console.log('error =>', error);
-      alert('로그인에 실패했습니다. 다시 시도해주세요.');
+      toast.error('로그인에 실패했습니다. 다시 시도해주세요.');
     }
   };
 

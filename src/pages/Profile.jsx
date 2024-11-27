@@ -1,28 +1,30 @@
 import { useEffect, useState } from 'react';
 import { getUserProfile, updateProfile } from '../api/auth';
-import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { toast } from 'react-toastify';
 
 const Profile = () => {
   const { user, setUser } = useAuth();
-  const navigate = useNavigate();
   const [nickname, setNickname] = useState(user?.nickname || '');
 
   // 프로필 정보 가져오기 (처음에만)
   useEffect(() => {
     const fetchProfile = async () => {
+      if (!user?.accessToken) {   // 엑세스 토큰이 없음
+        return;
+      }
+
       try {
         const data = await getUserProfile(user.accessToken);
         if (data.success) {
           setNickname(data.nickname);
         }
       } catch (error) {
-        console.log('error =>', error);
-        alert(error);
+        toast.error("프로필 정보 가져오기에 실패하였습니다");
       }
     };
     fetchProfile();
-  }, []);
+  }, [user]);
 
   // input value 위한 핸들러
   const handleNicknameChange = (e) => {
@@ -38,9 +40,12 @@ const Profile = () => {
       if (data.success) {
         // 프론트엔드 변경
         setUser({ ...user, nickname, avatar: data.avatar });
-        navigate('/');
+        toast.success("닉네임이 업데이트 되었습니다");
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log(`fetchProfile error\n${error}`)
+      toast.error("업데이트 실패");
+    }
   };
 
   return (
