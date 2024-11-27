@@ -1,0 +1,31 @@
+{
+  "testResults": [
+    {
+      "id": "2869",
+      "userId": "potatochip",
+      "nickname": "potatochip",
+      "avatar": null,
+      "mbti": "ENFP",
+      "visibility": false,
+      "date": "2024. 11. 27. 오전 6:36:55"
+    },
+    {
+      "id": "3c28",
+      "userId": "potatochip",
+      "nickname": "potatochip",
+      "avatar": null,
+      "mbti": "ISFP",
+      "visibility": true,
+      "date": "2024. 11. 27. 오후 7:35:55"
+    },
+    {
+      "id": "8d9c",
+      "userId": "CentralPark",
+      "nickname": "CentralPark",
+      "avatar": null,
+      "mbti": "INFP",
+      "visibility": false,
+      "date": "2024. 11. 27. 오후 7:45:51"
+    }
+  ]
+}

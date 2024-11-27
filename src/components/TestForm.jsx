@@ -39,6 +39,7 @@ const TestForm = ({ onSubmit }) => {
                   checked={answers[index]?.answer === q.type.split('/')[i]}
                   onChange={() => handleChange(index, q.type.split('/')[i])}
                   className="radio-input"
+                  required
                 />
                 {option}
               </label>

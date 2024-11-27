@@ -13,7 +13,21 @@ const TestPage = () => {
   const handleTestSubmit = async (answers) => {
     const mbtiResult = calculateMBTI(answers);
     setResult(mbtiResult);
-    // 백앤드로 보내는 로직 필요
+    try {
+      const resultData = {
+        userId: user.userId,
+        nickname: user.nickname,
+        avatar: user.avatar,
+        mbti: mbtiResult,
+        visibility: true,
+        date: new Date().toLocaleString('ko-KR'),
+      };
+
+      const data = await createTestResult(resultData);
+    } catch (error) {
+      // TODO change UI
+      console.log('error =>', error);
+    }
   };
 
   const handleNavigateToResults = () => {

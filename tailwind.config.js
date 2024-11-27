@@ -9,6 +9,7 @@ export default {
         pink: '#FFE3E3',
         green: '#C9E9D2',
         ivory: '#FEF9F2',
+        beige: '#DABA8B',
       },
     },
   },
