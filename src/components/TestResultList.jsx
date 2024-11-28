@@ -1,14 +1,13 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
 import { getTestResults } from '../api/testResults';
 import { useAuth } from '../context/AuthContext';
 import TestResultItem from './TestResultItem';
-import { toast } from 'react-toastify';
 import { useQuery } from '@tanstack/react-query';
 
 const TestResultList = () => {
   const { user: currentUser } = useAuth();
 
+  // useQuery 서버 상태 관리
   const {
     data: testResults = [],
     error,
@@ -19,7 +18,7 @@ const TestResultList = () => {
   });
 
   if (isPending) {
-    return <div className="space-y-4">다른 테스트 결과 로딩 중...</div>;
+    return <div className="space-y-4">테스트 결과 로딩 중...</div>;
   }
 
   if (error) {

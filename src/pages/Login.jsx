@@ -10,8 +10,10 @@ const Login = () => {
 
   const handleLogin = async (formData) => {
     try {
+      // auth 서버에 먼저 요청
       const data = await login(formData);
       if (data.success) {
+        // 성공 했을때만 localStorage에 정보 저장
         const { userId, nickname, avatar } = data;
         localLogin({ userId, nickname, avatar }, data.accessToken);
         toast.success("로그인에 성공하였습니다");

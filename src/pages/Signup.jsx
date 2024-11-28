@@ -5,6 +5,7 @@ import { register } from '../api/auth';
 const Signup = () => {
   const navigate = useNavigate();
 
+  // 회원가입 후 바로 로그인 창으로
   const handleSignup = async (formData) => {
     try {
       const data = await register(formData);  // {message : "회원가입", success : true}

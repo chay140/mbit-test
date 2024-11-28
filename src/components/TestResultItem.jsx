@@ -6,12 +6,14 @@ import {
   updateTestResultVisibility,
 } from '../api/testResults';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { toast } from 'react-toastify';
 
 const TestResultItem = ({ item }) => {
   const { user: currentUser } = useAuth();
   const queryClient = useQueryClient();
 
   // useMutation
+  // 비공개/공개 토글, 결과 삭제
   const { mutate: visibilityMutation } = useMutation({
     mutationFn: ({id, visibility}) => updateTestResultVisibility(id, visibility),
     onSuccess: () =>
@@ -25,11 +27,14 @@ const TestResultItem = ({ item }) => {
   });
 
   const handleVisibility = async () => {
-    visibilityMutation({id: item.id, visibility: !item.visibility});
+    visibilityMutation({ id: item.id, visibility: !item.visibility });
+    const infoText = item.visibility ? '비공개' : '공개';
+    toast.info(`${infoText}로 전환하였습니다`)
   };
 
   const handleDeleteItem = async () => {
     deleteMutation(item.id);
+    toast.warn("결과가 삭제 되었습니다")
   };
 
   return (

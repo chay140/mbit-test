@@ -9,13 +9,20 @@ const testAxiosInstance = axios.create({
 // 요청 인터셉터
 testAxiosInstance.interceptors.request.use(
   (config) => {
-    console.log(
-      `TEST_RESULTS\nmethod: ${config.method}\nbaseURL: ${config.baseURL}`
-    );
+    // 테스트용
+    // console.log(
+    //   `TEST_RESULTS\nmethod: ${config.method}\nbaseURL: ${config.baseURL}`
+    // );
     return config;
   },
   (error) => {
-    console.log(`request error => ${error}`);
+    return Promise.reject(error);
+  }
+);
+
+testAxiosInstance.interceptors.response.use(
+  (response) => response,
+  (error) => {
     return Promise.reject(error);
   }
 );

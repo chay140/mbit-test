@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+// 회원가입 및 로그인
 const AuthForm = ({ mode, onSubmit }) => {
   const [formData, setFormData] = useState({
     id: '',
@@ -7,6 +8,7 @@ const AuthForm = ({ mode, onSubmit }) => {
     nickname: '',
   });
 
+  // 입력값
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -15,6 +17,9 @@ const AuthForm = ({ mode, onSubmit }) => {
     });
   };
 
+  // 제출
+  // 로그인에서 불렸으면 login
+  // 회원가입창에서는 signup으로 요청 보내짐
   const handleSubmit = (e) => {
     e.preventDefault();
     // 데이터 전달만

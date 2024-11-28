@@ -14,11 +14,13 @@ axiosInstance.interceptors.request.use(
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
-    console.log(`AUTH\nmethod: ${config.method}\nbaseURL: ${config.baseURL}`);
+    // 테스트용 코드
+    // console.log(
+    //   `AUTH\nmethod: ${config.method}\nbaseURL: ${config.baseURL}`
+    // );
     return config;
   },
   (error) => {
-    console.log(`request error => ${error}`);
     return Promise.reject(error);
   }
 );

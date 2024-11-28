@@ -4,6 +4,7 @@ import { calculateMBTI, mbtiDescriptions } from '../utils/mbtiCalculator';
 import { useAuth } from '../context/AuthContext';
 import { createTestResult } from '../api/testResults';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const TestPage = () => {
   const { user } = useAuth();
@@ -26,7 +27,7 @@ const TestPage = () => {
       const data = await createTestResult(resultData);
     } catch (error) {
       // TODO change UI
-      console.log('여기인가? error =>', error);
+      toast.error("테스트 결과가 저장되지 못했습니다");
     }
   };
 

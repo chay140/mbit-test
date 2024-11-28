@@ -7,7 +7,7 @@ const Profile = () => {
   const { user, setUser } = useAuth();
   const [nickname, setNickname] = useState(user?.nickname || '');
 
-  // 프로필 정보 가져오기 (처음에만)
+  // 프로필 정보 가져오기
   useEffect(() => {
     const fetchProfile = async () => {
       if (!user?.accessToken) {   // 엑세스 토큰이 없음
@@ -24,7 +24,7 @@ const Profile = () => {
       }
     };
     fetchProfile();
-  }, [user]);
+  }, [user?.accessToken]);
 
   // input value 위한 핸들러
   const handleNicknameChange = (e) => {
@@ -43,7 +43,8 @@ const Profile = () => {
         toast.success("닉네임이 업데이트 되었습니다");
       }
     } catch (error) {
-      console.log(`fetchProfile error\n${error}`)
+      // 테스트용
+      // console.log(`fetchProfile error\n${error}`)
       toast.error("업데이트 실패");
     }
   };
